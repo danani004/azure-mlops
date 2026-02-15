@@ -1,0 +1,19 @@
+{
+  "name": "azure-mlops-client",
+  "version": "0.1.0",
+  "description": "React frontend for KRSP LLM training automation — run configuration and monitoring",
+  "private": true,
+  "scripts": {
+    "dev": "echo 'Add React dev server script'",
+    "build": "echo 'Add React build script'",
+    "test": "echo 'Add test runner'"
+  },
+  "keywords": [
+    "react",
+    "mlops",
+    "azure",
+    "llm"
+  ],
+  "author": "",
+  "license": "MIT"
+}

@@ -1,0 +1,57 @@
+# Azure Pipelines — LLM Training Automation (KRSP Research)
+# ---------------------------------------------------------------------------
+# This file defines the CI/CD pipeline that will:
+#   1. Run on code changes (and optionally on a schedule) to keep training
+#      workflows consistent and auditable.
+#   2. Validate the codebase (lint, unit tests) before any training is triggered.
+#   3. Build the React client so the frontend can be deployed or used in demos.
+#   4. Trigger or submit Azure ML training jobs when validation passes (e.g.,
+#      on main branch or manual run), so researchers get a single path from
+#      "code change" to "training run."
+#
+# Future steps to add:
+#   - Install dependencies and run tests (e.g., npm in /client, pytest in /tests).
+#   - Build the React app for production.
+#   - Authenticate to Azure ML and submit a training job (script or Azure ML task).
+#   - Optionally publish pipeline artifacts (build output, test results).
+# ---------------------------------------------------------------------------
+
+trigger:
+  - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+stages:
+  # Stage 1: Validate — ensure code quality before any training or deployment
+  - stage: Validate
+    displayName: 'Validate code and run tests'
+    jobs:
+      - job: LintAndTest
+        displayName: 'Lint and unit tests'
+        steps:
+          # Placeholder: add steps to checkout repo, install deps, run linters and tests
+          - script: echo 'Add lint and test steps (e.g., npm ci, npm test, pytest)'
+            displayName: 'Placeholder — lint and test'
+
+  # Stage 2: Build — produce deployable artifacts (e.g., React app)
+  - stage: Build
+    displayName: 'Build client application'
+    dependsOn: Validate
+    jobs:
+      - job: BuildClient
+        displayName: 'Build React client'
+        steps:
+          # Placeholder: add steps to build the React app (e.g., npm run build)
+          - script: echo 'Add build steps for /client'
+            displayName: 'Placeholder — build client'
+
+  # Stage 3: Train (future) — submit job to Azure ML when pipeline runs on main or manually
+  # - stage: Train
+  #   displayName: 'Submit Azure ML training job'
+  #   dependsOn: Build
+  #   jobs:
+  #     - job: SubmitTrainingJob
+  #       steps:
+  #         # Add Azure ML connection and job submission (e.g., az ml job create, or Azure ML task)
+  #         - script: echo 'Add Azure ML job submission'
