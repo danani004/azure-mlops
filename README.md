@@ -60,13 +60,16 @@ azure-mlops/
 
 ---
 
-## Next Steps and Future Work
+## Note
+This repository represents my initial understanding of MLOps principles and project structure based on the Azure MLOps training module. I'm eager to discuss the specific requirements for the KRSP project and learn how to implement this system in practice.
 
+
+
+## Next Steps and Future Work
 1. **Connect Azure Pipelines** — Link this repo to an Azure DevOps project and run the initial pipeline.
 2. **Define training pipeline** — Add steps for data validation, environment setup, and Azure ML job submission.
 3. **Build React client** — Implement screens for run configuration, job submission, and basic result views.
-4. **Document runbooks** — Add docs for common tasks (new dataset, new model config, troubleshooting).
-5. **Model registry and deployment** — Extend pipelines to register approved models and optional deployment to endpoints.
+4. **Model registry and deployment** — Extend pipelines to register approved models and optional deployment to endpoints.
 
 ---
 
